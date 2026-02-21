@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Techbeats Realty | Investment Buyers Agency</title>
+  <meta name="description" content="Techbeats Realty helps investors and home buyers find high-quality properties with strong due diligence, negotiation, and data-driven insights." />
+  <meta property="og:title" content="Techbeats Realty | Investment Buyers Agency" />
+  <meta property="og:description" content="Data-driven buyers agency helping you buy the right property with confidence." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/hero-city.jpg" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #fbfcfe;
+      --surface: rgba(255,255,255,.74);
+      --surface-2: rgba(255,255,255,.92);
+      --text: #0b1220;
+      --muted: rgba(11,18,32,.68);
+      --border: rgba(15,23,42,.12);
+      --shadow: 0 18px 55px rgba(2, 6, 23, .12);
+
+      /* ✅ Forest green theme (fixed) */
+      --a1: #1a7f3c; /* forest green primary */
+      --a2: #14532d; /* deep forest */
+      --a3: #22c55e; /* highlight green */
+      --ring: rgba(26,127,60,.22);
+
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1140px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 18% 10%, rgba(26,127,60,.14), transparent 55%),
+        radial-gradient(900px 600px at 84% 18%, rgba(20,83,45,.12), transparent 55%),
+        radial-gradient(900px 600px at 42% 92%, rgba(34,197,94,.10), transparent 55%),
+        var(--bg);
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 32px)); margin:0 auto; }
+
+    /* top nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(16px);
+      background: rgba(251,252,254,.78);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:12px;
+      min-height: 200px;
+    }
+
+    /* ✅ FIX: Let brand expand and avoid being squeezed */
+    .brand{
+      display:flex; align-items:center; gap:16px;
+      min-width: 360px;
+    }
+
+    /* ✅ Big logo, NO white outer box, NO padding */
+    .brand img{
+      width:280px;
+      height:auto;            /* keep aspect ratio */
+      object-fit: contain;
+      background: none;       /* remove white box */
+      padding: 0;             /* remove padding */
+      border: none;           /* remove border */
+      box-shadow: none;       /* remove shadow */
+      border-radius: 0;       /* remove rounded container look */
+      flex: 0 0 auto;
+      display:block;
+    }
+
+    /* ✅ FIX: prevent ugly wrap/crop; keep full "Techbeats Realty" readable */
+    .brand .name{
+      line-height:1.08;
+      min-width: 0;
+    }
+    .brand .name b{
+      display:block;
+      font-size: clamp(16px, 1.6vw, 20px);
+      letter-spacing:.2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+    .brand .name div{
+      font-size: clamp(12px, 1.1vw, 13px);
+      color:var(--muted);
+      margin-top:4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    .nav-links{
+      display:flex; align-items:center; gap:12px;
+      flex: 0 0 auto;
+    }
+    .nav-links a{
+      font-size:13px; color:var(--muted);
+      padding:8px 10px;
+      border-radius: 12px;
+      transition: all .2s ease;
+    }
+    .nav-links a:hover{ color:var(--text); background: rgba(15,23,42,.05); }
+
+    .nav-cta{
+      display:flex; align-items:center; gap:10px;
+      flex: 0 0 auto;
+    }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 12px 30px rgba(2,6,23,.08);
+      transition: transform .15s ease;
+      font-size:13px;
+      color: rgba(11,18,32,.85);
+      white-space:nowrap;
+    }
+    .pill:hover{ transform: translateY(-1px); }
+    .pill .dot{
+      width:10px; height:10px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      box-shadow: 0 0 0 6px var(--ring);
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.55);
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      color:white;
+      font-weight:800;
+      font-size:13px;
+      box-shadow: 0 16px 45px rgba(26,127,60,.18);
+      transition: transform .15s ease, filter .15s ease;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+    .btn:active{ transform: translateY(0px) scale(.99); }
+
+    .btn-ghost{
+      background: rgba(255,255,255,.78);
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 45px rgba(2,6,23,.09);
+      font-weight:800;
+    }
+
+    .hamburger{ display:none; }
+
+    /* mobile menu */
+    .mobile{
+      display:none;
+      border-top:1px solid var(--border);
+      padding: 10px 0 14px;
+    }
+    .mobile a{
+      display:block;
+      padding: 10px 12px;
+      border-radius: 14px;
+      color: rgba(11,18,32,.82);
+      font-weight:700;
+    }
+    .mobile a:hover{ background: rgba(15,23,42,.05); }
+    .mobile.show{ display:block; }
+
+    /* hero */
+    .hero{ padding: 34px 0 18px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      align-items:stretch;
+    }
+    .card{
+      border:1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-left{
+      padding: 28px;
+      position:relative;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.55);
+      background: rgba(255,255,255,.68);
+      font-size: 12px;
+      color: rgba(11,18,32,.78);
+      box-shadow: 0 12px 30px rgba(2,6,23,.08);
+    }
+    .kicker svg{ width:16px; height:16px; }
+    h1{
+      margin: 16px 0 10px;
+      font-size: clamp(28px, 3.4vw, 46px);
+      line-height:1.08;
+      letter-spacing: -.8px;
+    }
+    .sub{
+      margin:0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height:1.7;
+      max-width: 58ch;
+    }
+    .hero-actions{
+      display:flex;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .mini{
+      display:flex; gap:12px; margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    .stat{
+      flex: 1 1 170px;
+      padding: 14px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.84);
+      border: 1px solid rgba(15,23,42,.10);
+    }
+    .stat b{ display:block; font-size: 14px; margin-bottom: 4px; }
+    .stat span{ color: var(--muted); font-size: 12.5px; }
+
+    .hero-right{
+      display:grid;
+      grid-template-rows: 1fr;
+      gap: 14px;
+    }
+    .hero-img{
+      position:relative;
+      min-height: 340px;
+    }
+    .hero-img img{
+      width:100%; height:100%;
+      object-fit: cover;
+      display:block;
+      filter: saturate(1.05) contrast(1.02);
+    }
+    .overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.22));
+      pointer-events:none;
+    }
+    .floating{
+      position:absolute;
+      left: 16px; bottom: 16px; right: 16px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(255,255,255,.6);
+      box-shadow: 0 12px 30px rgba(2,6,23,.14);
+      font-size: 12.5px;
+      font-weight:700;
+    }
+    .chip i{
+      width: 22px; height: 22px;
+      border-radius: 10px;
+      display:inline-block;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      box-shadow: 0 0 0 6px var(--ring);
+    }
+
+    /* sections */
+    section{ padding: 26px 0; }
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: 22px;
+      letter-spacing: -.3px;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13.5px;
+      max-width: 66ch;
+      line-height:1.6;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      align-items:stretch;
+    }
+
+    .service{
+      padding: 18px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.84);
+      border: 1px solid rgba(15,23,42,.10);
+      box-shadow: 0 18px 55px rgba(2,6,23,.08);
+    }
+    .service .icon{
+      width: 44px; height: 44px; border-radius: 16px;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      box-shadow: 0 0 0 8px var(--ring);
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom: 12px;
+    }
+    .service .icon svg{ width:22px; height:22px; color:white; }
+    .service h3{ margin: 0 0 6px; font-size: 15px; }
+    .service p{ margin:0; color: var(--muted); font-size: 13.5px; line-height:1.6; }
+
+    .media{ overflow:hidden; position:relative; }
+    .media img{ width:100%; height:100%; object-fit: cover; display:block; }
+
+    .list{ padding: 18px; }
+    .list ul{ margin: 10px 0 0; padding:0; list-style:none; display:grid; gap:10px; }
+
+    .li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 12px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(15,23,42,.09);
+    }
+    .li .tick{
+      width: 22px; height: 22px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      box-shadow: 0 0 0 6px var(--ring);
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+    .li b{ display:block; font-size: 13.5px; margin-bottom: 2px; }
+    .li span{ color: var(--muted); font-size: 13px; line-height:1.55; display:block; }
+
+    .process{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .step{
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.84);
+      border: 1px solid rgba(15,23,42,.10);
+      box-shadow: 0 18px 55px rgba(2,6,23,.08);
+    }
+    .step .n{
+      width: 34px; height: 34px; border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      color:white; font-weight:900;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      box-shadow: 0 0 0 8px var(--ring);
+      margin-bottom: 10px;
+    }
+    .step h4{ margin: 0 0 6px; font-size: 14px; }
+    .step p{ margin:0; color: var(--muted); font-size: 13px; line-height:1.6; }
+
+    .faq{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    details{
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.84);
+      border-radius: 18px;
+      box-shadow: 0 18px 55px rgba(2,6,23,.08);
+      padding: 14px 14px;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight: 800;
+      font-size: 13.5px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    summary .plus{
+      width: 28px; height: 28px;
+      border-radius: 12px;
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.78);
+      display:flex; align-items:center; justify-content:center;
+      color: var(--muted);
+      flex: 0 0 auto;
+    }
+    details[open] summary .plus{
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      color:white;
+      border-color: rgba(255,255,255,.5);
+    }
+    details p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 13.2px;
+      line-height:1.65;
+    }
+
+    /* contact */
+    .contact-simple{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    .contact-card{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:20px;
+      border-radius:20px;
+      background: rgba(255,255,255,.85);
+      border:1px solid rgba(15,23,42,.08);
+      box-shadow: 0 18px 45px rgba(2,6,23,.08);
+      transition: all .2s ease;
+    }
+    .contact-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(2,6,23,.12);
+    }
+    .icon-circle{
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      background: linear-gradient(135deg, var(--a1), var(--a2));
+      box-shadow: 0 0 0 8px var(--ring);
+      flex: 0 0 auto;
+    }
+    .contact-card b{
+      display:block;
+      font-size:15px;
+    }
+    .contact-card span{
+      font-size:13px;
+      color: var(--muted);
+    }
+
+    footer{
+      padding: 26px 0 40px;
+      color: rgba(11,18,32,.75);
+    }
+    .foot{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+    .foot small{ color: var(--muted); }
+    .foot a{ color: rgba(11,18,32,.75); }
+    .foot a:hover{ color: var(--text); }
+
+    /* ✅ Mobile friendly tuning */
+    @media (max-width: 980px){
+      .nav-links{ display:none; }
+      .hamburger{ display:inline-flex; }
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .process{ grid-template-columns: 1fr; }
+      .faq{ grid-template-columns: 1fr; }
+      .contact-simple{ grid-template-columns: 1fr; }
+
+      .hero-left{ padding: 20px; }
+      .wrap{ width:min(var(--max), calc(100% - 22px)); }
+
+      /* ✅ keep logo big but avoid crushing text */
+      .nav-inner{ min-height: 140px; }
+      .brand{ min-width: 0; }
+      .brand img{ width:140px; height:auto; }
+    }
+
+    @media (max-width: 420px){
+      .pill{ display:none; }
+      .btn{ padding:12px 14px; }
+      .hero-img{ min-height: 280px; }
+
+      /* ✅ tiny screens */
+      .brand img{ width:110px; height:auto; }
+      .brand .name div{ display:none; }
+      .brand .name b{ font-size: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <div class="nav-inner">
+        <a class="brand" href="#top">
+          <img src="images/logo.png" alt="Techbeats Realty logo">
+          <div class="name">
+            <b>Techbeats Realty</b>
+            <div>Investment Buyers Agency</div>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#why">Why us</a>
+          <a href="#process">Process</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="pill" href="#contact" title="Quick contact">
+            <span class="dot"></span>
+            <span>Free strategy call</span>
+          </a>
+          <button class="btn hamburger" id="menuBtn" type="button" aria-label="Open menu">Menu</button>
+          <a class="btn" href="#contact">Enquire</a>
+        </div>
+      </div>
+
+      <div class="mobile" id="mobileMenu" aria-label="Mobile menu">
+        <a href="#services">Services</a>
+        <a href="#why">Why us</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="card hero-left">
+          <div class="kicker">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2l2.4 6.6H21l-5.4 4 2.1 6.7L12 15.8 6.3 19.3 8.4 12.6 3 8.6h6.6L12 2z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            Data-driven buying • Strong due diligence • Calm negotiation
+          </div>
+
+          <h1>Buy the right investment property — with confidence.</h1>
+          <p class="sub">
+            Techbeats Realty helps investors and home buyers source quality properties, assess risk,
+            and negotiate strategically. Clear guidance. No hype. Just better decisions.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Book a free consult</a>
+            <a class="btn btn-ghost" href="#services">View services</a>
+          </div>
+
+          <div class="mini">
+            <div class="stat">
+              <b>Smart filtering</b>
+              <span>Shortlist by budget, yields, risk checks & suburb data.</span>
+            </div>
+            <div class="stat">
+              <b>Buyer-first</b>
+              <span>We act for you — not for the selling agent.</span>
+            </div>
+            <div class="stat">
+              <b>Nationwide</b>
+              <span>Australia-wide sourcing with local checks.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card hero-img">
+          <img src="images/hero-city.jpg" alt="Modern city skyline">
+          <div class="overlay"></div>
+          <div class="floating">
+            <div class="chip"><i></i> Due diligence first</div>
+            <div class="chip"><i></i> Strong negotiation</div>
+            <div class="chip"><i></i> Clear strategy</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Services</h2>
+            <p>Choose full-service buying or targeted help (negotiation, due diligence, property checks).</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="service">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 20V10l8-6 8 6v10" stroke="currentColor" stroke-width="1.6" />
+                <path d="M9 20v-7h6v7" stroke="currentColor" stroke-width="1.6" />
+              </svg>
+            </div>
+            <h3>Full Buyers Agency</h3>
+            <p>Brief → research → shortlist → inspections → negotiate → contract support, all the way to settlement.</p>
+          </div>
+
+          <div class="service">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M3 12h18" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M7 8l-4 4 4 4" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M17 8l4 4-4 4" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+            </div>
+            <h3>Negotiation Only</h3>
+            <p>Price strategy, offer terms, agent handling, and calm execution to avoid overpaying.</p>
+          </div>
+
+          <div class="service">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M7 8h10M7 12h10M7 16h7" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+            </div>
+            <h3>Property Check (Due Diligence)</h3>
+            <p>Risk checks, comps guidance, flood/fire/insurance prompts, and a clear “go / no-go” view.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap grid-2">
+        <div class="card media">
+          <img src="images/analysis-dashboard.jpg" alt="Investment analysis dashboard on a laptop">
+        </div>
+
+        <div class="card list">
+          <div class="section-head" style="margin-bottom:6px;">
+            <div>
+              <h2>Why Techbeats Realty</h2>
+              <p>Elegant process + practical checks so you can buy with confidence (not emotion).</p>
+            </div>
+          </div>
+          <ul>
+            <li class="li">
+              <div class="tick"></div>
+              <div>
+                <b>Data-backed shortlists</b>
+                <span>We narrow down options based on budget, strategy, rental demand and risk signals.</span>
+              </div>
+            </li>
+            <li class="li">
+              <div class="tick"></div>
+              <div>
+                <b>Real due diligence</b>
+                <span>We prompt the right checks: flood/fire maps, insurance, tenancy, strata, inspections.</span>
+              </div>
+            </li>
+            <li class="li">
+              <div class="tick"></div>
+              <div>
+                <b>Negotiation discipline</b>
+                <span>Strong offer terms, clear walk-away points, and calm agent communication.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrap" style="margin-top:14px;">
+        <div class="grid-3">
+          <div class="card media" style="min-height:220px;">
+            <img src="images/inspection.jpg" alt="Home inspection and due diligence">
+          </div>
+          <div class="card media" style="min-height:220px;">
+            <img src="images/negotiation.jpg" alt="Negotiation and handshake">
+          </div>
+          <div class="card media" style="min-height:220px;">
+            <img src="images/team.jpg" alt="Professional team meeting">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Simple process</h2>
+            <p>Clear steps from strategy call to purchase — with checks at every stage.</p>
+          </div>
+        </div>
+
+        <div class="process">
+          <div class="step">
+            <div class="n">1</div>
+            <h4>Strategy call</h4>
+            <p>Goals, budget, timeline, preferred states/suburbs, risk appetite.</p>
+          </div>
+          <div class="step">
+            <div class="n">2</div>
+            <h4>Shortlist</h4>
+            <p>We research and shortlist options that match your strategy and numbers.</p>
+          </div>
+          <div class="step">
+            <div class="n">3</div>
+            <h4>Inspect & check</h4>
+            <p>Building/pest prompts, comparable sales guidance, risk map reminders.</p>
+          </div>
+          <div class="step">
+            <div class="n">4</div>
+            <h4>Negotiate</h4>
+            <p>Offer strategy, terms, agent handling, and walk-away discipline.</p>
+          </div>
+          <div class="step">
+            <div class="n">5</div>
+            <h4>Contract support</h4>
+            <p>Coordinate with conveyancer/solicitor and key milestones to go unconditional.</p>
+          </div>
+          <div class="step">
+            <div class="n">6</div>
+            <h4>Set up for success</h4>
+            <p>Property manager handover, rental readiness, and next-buy planning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>FAQ</h2>
+            <p>Common questions investors ask before engaging a buyers agency.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>What is a buyer’s agent? <span class="plus">+</span></summary>
+            <p>A buyer’s agent represents the buyer (you) to locate, assess and negotiate property purchases.</p>
+          </details>
+          <details>
+            <summary>Do you buy Australia-wide? <span class="plus">+</span></summary>
+            <p>Yes — we can help across Australia, and we encourage local checks (inspections, risk maps, insurance).</p>
+          </details>
+          <details>
+            <summary>Can you help if I already found a property? <span class="plus">+</span></summary>
+            <p>Yes. Use “Negotiation Only” or “Property Check” to validate the deal and negotiate confidently.</p>
+          </details>
+          <details>
+            <summary>How do fees work? <span class="plus">+</span></summary>
+            <p>Typically a fixed service fee (and sometimes a retainer). Keep it transparent and agreed upfront.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Contact</h2>
+            <p>Share your criteria and we’ll respond with next steps.</p>
+          </div>
+        </div>
+
+        <div class="contact-simple">
+          <a class="contact-card" href="https://docs.google.com/forms/d/e/1FAIpQLSdY_ehG-sLqoGEBpQJbb3iM2_b8OEu4x-L1ZWPE-260jPANMw/viewform" target="_blank" rel="noopener">
+            <div class="icon-circle">📝</div>
+            <div>
+              <b>Submit Enquiry Form</b>
+              <span>Open secure form</span>
+            </div>
+          </a>
+
+          <a class="contact-card" href="mailto:info@techbeatsrealty.com.au">
+            <div class="icon-circle">📩</div>
+            <div>
+              <b>Email</b>
+              <span>info@techbeatsrealty.com.au</span>
+            </div>
+          </a>
+
+          <a class="contact-card" href="tel:+61448410568">
+            <div class="icon-circle">📞</div>
+            <div>
+              <b>Phone</b>
+              <span>+61 448 410 568</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="card media" style="min-height:220px;">
+          <img src="images/process.jpg" alt="Planning and checklist">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <b>Techbeats Realty</b><br/>
+        <small>Investment Buyers Agency • Australia</small>
+      </div>
+      <div>
+        <a href="#services">Services</a> ·
+        <a href="#faq">FAQ</a> ·
+        <a href="#contact">Contact</a>
+        <br/>
+        <small>© <span id="yr"></span> Techbeats Realty. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('show'));
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('show')));
+    }
+
+    // year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
